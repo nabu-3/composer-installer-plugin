@@ -42,10 +42,10 @@ class NabuComposerInstaller extends LibraryInstaller
         error_log("Package type detected: " . $package->getType());
         switch ($package->getType()) {
             case 'project':
-                $path = 'phputils' . DIRECTORY_SEPARATOR;
+                $path = 'phputils';
                 break;
             case 'nabu-devel':
-                $path = 'phputils' . DIRECTORY_SEPARATOR;
+                $path = 'phputils';
                 break;
             case 'nabu-provider':
                 $path = 'phputils' . DIRECTORY_SEPARATOR . 'providers' . DIRECTORY_SEPARATOR . substr($name, 7);
@@ -66,6 +66,6 @@ class NabuComposerInstaller extends LibraryInstaller
      */
     public function supports($packageType)
     {
-        return in_array($packageType, array('project', 'devel'));
+        return in_array($packageType, array('project', 'nabu-devel', 'nabu-provider'));
     }
 }
