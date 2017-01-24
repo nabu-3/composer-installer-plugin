@@ -1,0 +1,15 @@
+{
+    "name": "nabu-3/composer-installer-plugin",
+    "type": "composer-plugin",
+    "version": "3.0.0",
+    "license": "Apache-2.0",
+    "autoload": {
+        "psr-0": {"nabu3\\Composer": ""}
+    },
+    "extra": {
+        "class": "nabu3\\Composer\\NabuComposerInstallerPlugin"
+    },
+    "require": {
+        "composer-plugin-api": "^1.0"
+    }
+}
