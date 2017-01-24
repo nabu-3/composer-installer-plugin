@@ -42,10 +42,10 @@ class NabuComposerInstaller extends LibraryInstaller
         error_log("Package type detected: " . $package->getType());
         switch ($package->getType()) {
             case 'project':
-                $path = 'phputils';
+                $path = 'src';
                 break;
             case 'nabu-devel':
-                $path = 'phputils';
+                $path = 'src';
                 break;
             case 'nabu-provider':
                 $path = 'phputils' . DIRECTORY_SEPARATOR . 'providers' . DIRECTORY_SEPARATOR . substr($name, 7);
