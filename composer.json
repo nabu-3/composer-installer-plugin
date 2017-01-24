@@ -11,5 +11,11 @@
     },
     "require": {
         "composer-plugin-api": "^1.0"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/nabu-3/composer-installer-plugin"
+        }
+    ]
 }
