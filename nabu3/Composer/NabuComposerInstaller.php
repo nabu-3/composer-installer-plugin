@@ -39,6 +39,7 @@ class NabuComposerInstaller extends LibraryInstaller
             );
         }
 
+        error_log("Package type detected: " . $package->getType());
         switch ($package->getType()) {
             case 'project':
                 $path = 'phputils' . DIRECTORY_SEPARATOR;
@@ -47,13 +48,15 @@ class NabuComposerInstaller extends LibraryInstaller
                 $path = 'phputils' . DIRECTORY_SEPARATOR;
                 break;
             case 'nabu-provider':
-                $path = 'phptuils' . DIRECTORY_SEPARATOR . 'providers' . DIRECTORY_SEPARATOR . substr($name, 7);
+                $path = 'phputils' . DIRECTORY_SEPARATOR . 'providers' . DIRECTORY_SEPARATOR . substr($name, 7);
                 break;
             default:
                 throw new \InvalidArgumentException(
                     'Invalid package type "' . $package->getType() . '"'
                 );
         }
+
+        error_log("Path selected: $path");
 
         return $path;
     }
