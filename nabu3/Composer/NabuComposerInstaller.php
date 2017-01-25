@@ -30,6 +30,9 @@ use Composer\Installer\LibraryInstaller;
  */
 class NabuComposerInstaller extends LibraryInstaller
 {
+    const BASE_PATH = 'src';
+    const PROVIDERS_PATH = 'providers';
+
     public function getInstallPath(PackageInterface $package)
     {
         $name = $package->getPrettyName();
@@ -42,10 +45,12 @@ class NabuComposerInstaller extends LibraryInstaller
         switch ($package->getType()) {
             case 'project':
             case 'nabu-devel':
-                $path = 'src';
+                $path = self::BASE_PATH;
                 break;
             case 'nabu-provider':
-                $path = 'phputils' . DIRECTORY_SEPARATOR . 'providers' . DIRECTORY_SEPARATOR . substr($name, 7);
+                $path = self::BASE_PATH . DIRECTORY_SEPARATOR
+                      . self::PROVIDERS_PATH . DIRECTORY_SEPARATOR
+                      . substr($name, 7);
                 break;
             default:
                 throw new \InvalidArgumentException(
