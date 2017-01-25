@@ -30,7 +30,8 @@ use Composer\Installer\LibraryInstaller;
  */
 class NabuComposerInstaller extends LibraryInstaller
 {
-    const BASE_PATH = 'src';
+    const SOURCE_PATH = 'src';
+    const SDK_PATH = 'sdk';
     const PROVIDERS_PATH = 'providers';
 
     public function getInstallPath(PackageInterface $package)
@@ -44,11 +45,13 @@ class NabuComposerInstaller extends LibraryInstaller
 
         switch ($package->getType()) {
             case 'project':
-            case 'nabu-devel':
-                $path = self::BASE_PATH;
+                $path = self::SOURCE_PATH;
+                break;
+            case 'nabu-sdk':
+                $path = self::SDK_PATH;
                 break;
             case 'nabu-provider':
-                $path = self::BASE_PATH . DIRECTORY_SEPARATOR
+                $path = self::SOURCE_PATH . DIRECTORY_SEPARATOR
                       . self::PROVIDERS_PATH . DIRECTORY_SEPARATOR
                       . substr($name, 7);
                 break;
@@ -66,6 +69,6 @@ class NabuComposerInstaller extends LibraryInstaller
      */
     public function supports($packageType)
     {
-        return in_array($packageType, array('project', 'nabu-devel', 'nabu-provider'));
+        return in_array($packageType, array('project', 'nabu-sdk', 'nabu-provider'));
     }
 }
