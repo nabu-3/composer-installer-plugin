@@ -39,11 +39,8 @@ class NabuComposerInstaller extends LibraryInstaller
             );
         }
 
-        error_log("Package type detected: " . $package->getType());
         switch ($package->getType()) {
             case 'project':
-                $path = 'src';
-                break;
             case 'nabu-devel':
                 $path = 'src';
                 break;
@@ -55,8 +52,6 @@ class NabuComposerInstaller extends LibraryInstaller
                     'Invalid package type "' . $package->getType() . '"'
                 );
         }
-
-        error_log("Path selected: $path");
 
         return $path;
     }
