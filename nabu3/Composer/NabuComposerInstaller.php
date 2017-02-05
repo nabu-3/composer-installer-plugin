@@ -51,8 +51,7 @@ class NabuComposerInstaller extends LibraryInstaller
                 $path = self::SDK_PATH;
                 break;
             case 'nabu-provider':
-                $path = self::SOURCE_PATH . DIRECTORY_SEPARATOR
-                      . self::PROVIDERS_PATH . DIRECTORY_SEPARATOR
+                $path = self::PROVIDERS_PATH . DIRECTORY_SEPARATOR
                       . str_replace('-', DIRECTORY_SEPARATOR, substr($name, 7));
                 break;
             default:
