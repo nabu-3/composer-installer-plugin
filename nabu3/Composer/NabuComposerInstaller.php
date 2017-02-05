@@ -52,13 +52,15 @@ class NabuComposerInstaller extends LibraryInstaller
                 break;
             case 'nabu-provider':
                 $path = self::PROVIDERS_PATH . DIRECTORY_SEPARATOR
-                      . str_replace('-', DIRECTORY_SEPARATOR, substr($name, 7));
+                      . str_replace('-', DIRECTORY_SEPARATOR, substr($name, 9));
                 break;
             default:
                 throw new \InvalidArgumentException(
                     'Invalid package type "' . $package->getType() . '"'
                 );
         }
+
+        error_log("Composer install path: $path");
 
         return $path;
     }
