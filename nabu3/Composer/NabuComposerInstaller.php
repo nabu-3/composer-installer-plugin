@@ -52,7 +52,7 @@ class NabuComposerInstaller extends LibraryInstaller
                 break;
             case 'nabu-provider':
                 $path = self::PROVIDERS_PATH . DIRECTORY_SEPARATOR
-                      . str_replace('-', DIRECTORY_SEPARATOR, substr($name, 9));
+                      . str_replace('-', DIRECTORY_SEPARATOR, substr($name, 16));
                 break;
             default:
                 throw new \InvalidArgumentException(
