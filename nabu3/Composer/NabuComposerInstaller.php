@@ -60,8 +60,6 @@ class NabuComposerInstaller extends LibraryInstaller
                 );
         }
 
-        error_log("Composer install path: $path");
-
         return $path;
     }
 
