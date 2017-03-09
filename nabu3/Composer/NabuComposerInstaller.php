@@ -60,7 +60,7 @@ class NabuComposerInstaller extends LibraryInstaller
                 $path = self::PUB_PATH . DIRECTORY_SEPARATOR . self::RUNTIME_PATH . DIRECTORY_SEPARATOR . str_replace('-', DIRECTORY_SEPARATOR, substr($name, 15));
                 break;
             case 'nabu-public':
-                $path = self::PUB_PATH . substr($name, 7);
+                $path = self::PUB_PATH . DIRECTORY_SEPARATOR . substr($name, 7);
                 break;
             default:
                 throw new \InvalidArgumentException(
