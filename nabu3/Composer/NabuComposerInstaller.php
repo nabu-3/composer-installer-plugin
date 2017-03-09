@@ -26,7 +26,7 @@ use Composer\Installer\LibraryInstaller;
  * Class to implement the Plugin Installer of Composer.
  * @author Rafael Gutierrez <rgutierrez@wiscot.com>
  * @since 3.0.0 Surface
- * @version 3.0.17 Surface
+ * @version 3.0.18 Surface
  * @package \providers\smarty
  */
 class NabuComposerInstaller extends LibraryInstaller
@@ -35,7 +35,6 @@ class NabuComposerInstaller extends LibraryInstaller
     const PUB_PATH = 'pub';
     const SDK_PATH = 'sdk';
     const PROVIDERS_PATH = 'providers';
-    const CMS_PATH = 'cms';
     const RUNTIME_PATH = 'runtime';
 
     public function getInstallPath(PackageInterface $package)
@@ -57,11 +56,11 @@ class NabuComposerInstaller extends LibraryInstaller
             case 'nabu-provider':
                 $path = self::PUB_PATH . DIRECTORY_SEPARATOR . self::PROVIDERS_PATH . DIRECTORY_SEPARATOR . str_replace('-', DIRECTORY_SEPARATOR, substr($name, 16));
                 break;
-            case 'nabu-cms':
-                $path = self::PUB_PATH . DIRECTORY_SEPARATOR . self::CMS_PATH;
-                break;
             case 'nabu-runtime':
                 $path = self::PUB_PATH . DIRECTORY_SEPARATOR . self::RUNTIME_PATH . DIRECTORY_SEPARATOR . str_replace('-', DIRECTORY_SEPARATOR, substr($name, 15));
+                break;
+            case 'nabu-public':
+                $path = self::PUB_PATH . substr($name, 7);
                 break;
             default:
                 throw new \InvalidArgumentException(
