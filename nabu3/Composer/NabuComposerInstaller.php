@@ -76,6 +76,6 @@ class NabuComposerInstaller extends LibraryInstaller
      */
     public function supports($packageType)
     {
-        return in_array($packageType, array('project', 'nabu-sdk', 'nabu-provider', 'nabu-cms', 'nabu-runtime'));
+        return in_array($packageType, array('project', 'nabu-sdk', 'nabu-provider', 'nabu-public', 'nabu-runtime'));
     }
 }
