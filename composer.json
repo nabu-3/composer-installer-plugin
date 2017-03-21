@@ -1,6 +1,7 @@
 {
     "type": "composer-plugin",
     "name": "nabu-3/composer-installer-plugin",
+    "description": "nabu-3 Composer plugin for packages deployment"
     "version": "3.0.18",
     "license": "Apache-2.0",
     "autoload": {
