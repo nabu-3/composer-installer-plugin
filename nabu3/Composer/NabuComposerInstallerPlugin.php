@@ -25,7 +25,7 @@ use Composer\Plugin\PluginInterface;
 
 /**
  * Class to implement the Plugin Class of Composer.
- * @author Rafael Gutierrez <rgutierrez@wiscot.com>
+ * @author Rafael Gutierrez <rgutierrez@nabu-3.com>
  * @version 3.0.0 Surface
  * @package \providers\smarty
  */
